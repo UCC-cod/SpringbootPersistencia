@@ -21,7 +21,7 @@ public class EstudianteServiceImpl implements EstudianteService {
     public EstudianteDTO createEstudiante(EstudianteDTO estudianteDTO) {
         Estudiante estudiante = mapToEntity(estudianteDTO);
         estudianteRepository.save(estudiante);
-        return null;
+        return mapToDTO(estudiante);
     }
 
     @Override

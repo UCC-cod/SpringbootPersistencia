@@ -1,43 +1,19 @@
-package com.ucc.Biblioteca.models;
+package com.ucc.Biblioteca.dtos;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name="libro")
-public class Libro {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(nullable = false, length = 50)
+public class LibroDTO {
     private String titulo;
-
-    @Column(nullable = false, length = 50)
     private String autor;
-
-    @Column(nullable = false, unique = true, length = 50)
     private String isbn;
-
-    @Column(nullable = false, length = 50)
     private int cantidad;
 
-    public Libro() {
+    public LibroDTO() {
     }
 
-    public Libro(int id, String titulo, String autor, String isbn, int cantidad) {
-        this.id = id;
+    public LibroDTO(String titulo, String autor, String isbn, int cantidad) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
         this.cantidad = cantidad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitulo() {
