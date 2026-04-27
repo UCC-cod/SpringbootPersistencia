@@ -4,6 +4,7 @@ import com.ucc.Biblioteca.dtos.EstudianteDTO;
 import com.ucc.Biblioteca.models.Estudiante;
 import com.ucc.Biblioteca.repositories.EstudianteRepository;
 import com.ucc.Biblioteca.services.EstudianteService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.stream.Collectors;
 @Service
 public class EstudianteServiceImpl implements EstudianteService {
     private final EstudianteRepository estudianteRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public EstudianteServiceImpl(EstudianteRepository estudianteRepository) {
+    public EstudianteServiceImpl(EstudianteRepository estudianteRepository,  PasswordEncoder passwordEncoder) {
         this.estudianteRepository = estudianteRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -48,7 +51,7 @@ public class EstudianteServiceImpl implements EstudianteService {
         estudiante.setNombre(estudianteDTO.getNombre());
         estudiante.setApellido(estudianteDTO.getApellido());
         estudiante.setCorreo(estudianteDTO.getCorreo());
-        estudiante.setPass(estudianteDTO.getPass());
+        estudiante.setPass(passwordEncoder.encode(estudianteDTO.getPass()));
         return estudiante;
     }
 }
