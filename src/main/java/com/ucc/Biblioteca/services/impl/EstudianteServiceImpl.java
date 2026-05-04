@@ -41,7 +41,6 @@ public class EstudianteServiceImpl implements EstudianteService {
         estudianteDTO.setNombre(estudiante.getNombre());
         estudianteDTO.setApellido(estudiante.getApellido());
         estudianteDTO.setCorreo(estudiante.getCorreo());
-        estudianteDTO.setPass(estudiante.getPass());
         return estudianteDTO;
     }
 

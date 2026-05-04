@@ -24,6 +24,4 @@ public class Prestamo {
 
     @Column(nullable = true)
     private Date fechaDevolucion;
-
-
 }

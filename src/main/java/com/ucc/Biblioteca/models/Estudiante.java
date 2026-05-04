@@ -21,6 +21,7 @@ public class Estudiante {
     private String correo;
 
     @Column(nullable = true, length = 100)
+    @JsonIgnore
     private String pass;
 
     public Estudiante(String nombre, int id, String apellido, String correo, String pass) {
