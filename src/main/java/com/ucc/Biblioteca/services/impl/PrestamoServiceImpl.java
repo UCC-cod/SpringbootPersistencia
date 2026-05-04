@@ -11,6 +11,7 @@ import com.ucc.Biblioteca.services.PrestamoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PrestamoServiceImpl implements PrestamoService {
@@ -26,12 +27,16 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     public PrestamoDTO createPrestamo(PrestamoDTO prestamoDTO) {
-        return null;
+        Prestamo prestamo = mapToEntity(prestamoDTO);
+        prestamoRepository.save(prestamo);
+        return mapToDTO(prestamo);
     }
 
     @Override
     public List<PrestamoDTO> findAll() {
-        return List.of();
+        return prestamoRepository.findAll().stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
     }
 
     private PrestamoDTO mapToDTO(Prestamo prestamo) {
