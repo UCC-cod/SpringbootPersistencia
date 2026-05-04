@@ -24,4 +24,54 @@ public class Prestamo {
 
     @Column(nullable = true)
     private Date fechaDevolucion;
+
+    public Prestamo() {
+    }
+
+    public Prestamo(int id, Estudiante estudiante, Libro libro, Date fechaPrestamo) {
+        this.id = id;
+        this.estudiante = estudiante;
+        this.libro = libro;
+        this.fechaPrestamo = fechaPrestamo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public Libro getLibro() {
+        return libro;
+    }
+
+    public void setLibro(Libro libro) {
+        this.libro = libro;
+    }
+
+    public Date getFechaPrestamo() {
+        return fechaPrestamo;
+    }
+
+    public void setFechaPrestamo(Date fechaPrestamo) {
+        this.fechaPrestamo = fechaPrestamo;
+    }
+
+    public Date getFechaDevolucion() {
+        return fechaDevolucion;
+    }
+
+    public void setFechaDevolucion(Date fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
+    }
 }

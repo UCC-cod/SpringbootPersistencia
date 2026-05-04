@@ -1,17 +1,17 @@
 package com.ucc.Biblioteca.dtos;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class PrestamoDTO {
     private int estudianteID;
     private int libroID;
-    private LocalDate fechaPrestamo;
-    private LocalDate fechaDevolucion;
+    private Date fechaPrestamo;
+    private Date fechaDevolucion;
 
     public PrestamoDTO() {
     }
 
-    public PrestamoDTO(int estudianteID, int libroID, LocalDate fechaPrestamo) {
+    public PrestamoDTO(int estudianteID, int libroID, Date fechaPrestamo) {
         this.estudianteID = estudianteID;
         this.libroID = libroID;
         this.fechaPrestamo = fechaPrestamo;
@@ -33,19 +33,19 @@ public class PrestamoDTO {
         this.libroID = libroID;
     }
 
-    public LocalDate getFechaPrestamo() {
+    public Date getFechaPrestamo() {
         return fechaPrestamo;
     }
 
-    public void setFechaPrestamo(LocalDate fechaPrestamo) {
+    public void setFechaPrestamo(Date fechaPrestamo) {
         this.fechaPrestamo = fechaPrestamo;
     }
 
-    public LocalDate getFechaDevolucion() {
+    public Date getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(LocalDate fechaDevolucion) {
+    public void setFechaDevolucion(Date fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 
