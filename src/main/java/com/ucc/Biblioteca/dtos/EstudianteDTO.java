@@ -59,4 +59,13 @@ public class EstudianteDTO {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+    @Override
+    public String toString() {
+        return "EstudianteDTO{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", correo='" + correo + '\'' +
+                '}';
+    }
 }
